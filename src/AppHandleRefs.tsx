@@ -1,7 +1,7 @@
-import React, {useRef, useImperativeHandle, useReducer} from 'react'
+import React, {useRef} from 'react'
 import Form, {FormRef} from './Form'
 
-export const AppHandle: React.FC = () => {
+export const AppHandleRefs: React.FC = () => {
   const formRef = useRef<FormRef>(null)
 
   function handleSubmit() {

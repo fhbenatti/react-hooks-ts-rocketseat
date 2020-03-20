@@ -1,5 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
+import AppHooksBasics from './AppHooksBasics'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<AppHooksBasics />, document.getElementById('root'))
