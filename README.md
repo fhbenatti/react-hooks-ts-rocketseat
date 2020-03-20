@@ -2,4 +2,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ---
 
-Project developed to understand the react-redux concepts of the rocketseat video tutorial: link
+Project developed to understand the react hooks concepts using typescript of the rocketseat video tutorial: [link](https://www.youtube.com/watch?v=GOB-lawExXc)
