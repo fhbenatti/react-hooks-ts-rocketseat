@@ -33,8 +33,10 @@ const AppHooksBasics: React.FC = () => {
       const data = await response.json()
       setUser(data)
     }
-    console.log('load data')
-    loadData()
+    setTimeout(() => {
+      console.log('load data')
+      loadData()
+    }, 3000)
   }, [userName])
 
   const greeting = useCallback((user: User) => alert(`Hello ${user.name}`), [])
