@@ -23,17 +23,19 @@ type CartActionType = {
 }
 
 const AppHooksBasics: React.FC = () => {
+  const [userName, setUserName] = useState<string>('fhbenatti')
   const [user, setUser] = useState<User>()
   const inputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
     async function loadData() {
-      const response = await fetch('https://api.github.com/users/fhbenatti')
+      const response = await fetch(`https://api.github.com/users/${userName}`)
       const data = await response.json()
       setUser(data)
     }
+    console.log('load data')
     loadData()
-  }, [])
+  }, [userName])
 
   const greeting = useCallback((user: User) => alert(`Hello ${user.name}`), [])
 
@@ -57,6 +59,11 @@ const AppHooksBasics: React.FC = () => {
     }
   )
 
+  function handleFindUser() {
+    setUserName(inputRef.current?.value.toString() ?? 'fhbenatti')
+    console.log(inputRef.current?.value)
+  }
+
   inputRef.current?.focus()
   return (
     <div>
@@ -65,8 +72,9 @@ const AppHooksBasics: React.FC = () => {
       <p>{user?.avatar_url}</p>
       <p>{concatInfo}</p>
       <form action="">
-        <input type="text" ref={inputRef} />
+        <input defaultValue={userName} type="text" ref={inputRef} />
       </form>
+      <button onClick={handleFindUser}>Buscar usuário</button>
     </div>
   )
 }
